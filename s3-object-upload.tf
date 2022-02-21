@@ -9,7 +9,7 @@ resource "aws_s3_object" "object-upload-html" {
 }
 
 resource "aws_s3_object" "object-upload-jpg" {
-    for_each        = fileset("uploads/", "*.jpg")
+    for_each        = fileset("uploads/", "*.jpeg")
     bucket          = data.aws_s3_bucket.selected-bucket.bucket
     key             = each.value
     source          = "uploads/${each.value}"
