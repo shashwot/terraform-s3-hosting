@@ -13,7 +13,7 @@ resource "aws_route53_record" "www-a" {
   type = "A"
 
   alias {
-    name = data.aws_s3_bucket.selected-bucket.website_endpoint
+    name = data.aws_s3_bucket.selected-bucket.website_domain
     zone_id = data.aws_s3_bucket.selected-bucket.hosted_zone_id
     evaluate_target_health = false
   }
